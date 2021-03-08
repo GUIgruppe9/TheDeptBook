@@ -24,5 +24,10 @@ namespace TheDeptBook
         {
             InitializeComponent();
         }
+
+        private void AddDept_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
