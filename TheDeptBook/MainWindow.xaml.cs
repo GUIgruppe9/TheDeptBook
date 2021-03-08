@@ -24,5 +24,10 @@ namespace TheDeptBook
         {
             InitializeComponent();
         }
+
+        private void AddDebt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
