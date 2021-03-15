@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:TheDeptBook"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <DataTemplate x:Key="lbxTemplate">
+             <WrapPanel>
+                 <TextBlock Text="{Binding Path=Name}" Padding="5,0,0,0"/>
+                 <TextBlock Text="{Binding Path=Value}" Margin="30, 0,0,0"/>
+             </WrapPanel>
+         </DataTemplate>
     </Application.Resources>
 </Application>
