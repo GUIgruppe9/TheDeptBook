@@ -18,7 +18,9 @@
         <Label Content="Debtors" HorizontalAlignment="Left" 
                Margin="33,33,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Add" Grid.Column="1" HorizontalAlignment="Left" 
+        <Button Content="Add" ToolTip="Add Debtor"
+                Command="{Binding Path=AddDebtor}"
+                Grid.Column="1" HorizontalAlignment="Left" 
                 Margin="63.333,59,0,0" VerticalAlignment="Top" 
                 Width="75" Click="AddDebt_Click"/>
 
