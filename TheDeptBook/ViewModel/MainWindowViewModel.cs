@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -54,16 +55,30 @@ namespace TheDeptBook.ViewModel
         }
 
         // Commands
-        ICommand _newCommand;
+        ICommand _addDebtorCommand;
 
         public ICommand AddDebtor
         {
             get
             {
-                return _newCommand ?? (_newCommand = new DelegateCommand(() =>
+                return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
                 {
                     Debtors.Add(new Debtor());
                     CurrentIndex = Debtors.Count - 1;
+                }));
+            }
+        }
+
+        ICommand _debtorClickedCommand;
+
+        public ICommand DebtorClicked
+        {
+            get
+            {
+                return _debtorClickedCommand ?? (_debtorClickedCommand = new DelegateCommand(() =>
+                {
+                    Window newWindow = new Window();
+                    newWindow.Show();
                 }));
             }
         }

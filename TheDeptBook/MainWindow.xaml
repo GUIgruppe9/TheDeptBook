@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDeptBook"
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="The Debt Book" Height="450" Width="400">
     <Window.DataContext>
@@ -24,17 +26,16 @@
                 Margin="63.333,59,0,0" VerticalAlignment="Top" 
                 Width="75" Click="AddDebt_Click"/>
 
-        <ListBox ItemsSource="{Binding Path=Debtors}"
-                 SelectedItem="{Binding Path=CurrentDebtor}"
+        <DataGrid ItemsSource="{Binding Path=Debtors}"
+                 SelectedItem="{Binding Path=CurrentDebtor}" 
                  SelectedIndex="{Binding Path=CurrentIndex}"
-                 IsSynchronizedWithCurrentItem="True"
                  ItemTemplate="{StaticResource lbxTemplate}"
                  HorizontalAlignment="Left" 
                  MinHeight="100" 
                  Margin="33,59,0,0" 
                  VerticalAlignment="Top" 
                  MaxWidth="150" MinWidth="100">
-        </ListBox>
+        </DataGrid>
 
 
 

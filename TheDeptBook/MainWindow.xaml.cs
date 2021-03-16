@@ -29,5 +29,11 @@ namespace TheDeptBook
         {
             throw new NotImplementedException();
         }
+
+        //private void Debtor_clicked(object sender, RoutedEventArgs e)
+        //{
+        //    Window newWindow = new Window();
+        //    newWindow.Show();
+        //}
     }
 }
