@@ -77,8 +77,8 @@ namespace TheDeptBook.ViewModel
             {
                 return _debtorClickedCommand ?? (_debtorClickedCommand = new DelegateCommand(() =>
                 {
-                    Window newWindow = new Window();
-                    newWindow.Show();
+                    DebtorWindow debtorWindow = new DebtorWindow();
+                    debtorWindow.Show();
                 }));
             }
         }
