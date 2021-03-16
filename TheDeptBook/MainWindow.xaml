@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDeptBook"
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="The Debt Book" Height="450" Width="400">
@@ -35,6 +35,12 @@
                  Margin="33,59,0,0" 
                  VerticalAlignment="Top" 
                  MaxWidth="150" MinWidth="100">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
         </DataGrid>
 
 
