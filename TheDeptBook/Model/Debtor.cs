@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace TheDeptBook.Model
         private string id;
         private string name;
         private double debtValue;
+        public ObservableCollection<Debit> Debits;
 
         public Debtor() { }
 

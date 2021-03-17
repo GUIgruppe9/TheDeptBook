@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDeptBook"
         mc:Ignorable="d"
-        Title="DebtorWindow" Height="450" Width="800">
-    <Grid Background="Aqua">
-        
+        Title="DebtorWindow" Height="450" Width="400">
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Debits" HorizontalAlignment="Left" 
+               Margin="33,33,0,0" VerticalAlignment="Top"/>
+
+        <DataGrid HorizontalAlignment="Left" 
+                  MinHeight="100" 
+                  Margin="33,59,0,0" 
+                  VerticalAlignment="Top" 
+                  MaxWidth="150" MinWidth="100">
+
+        </DataGrid>
+
+        <Button Content="Add" ToolTip="Add Debtor"
+                Grid.Column="1" HorizontalAlignment="Left" 
+                Margin="63.333,59,0,0" VerticalAlignment="Top" 
+                Width="75"/>
     </Grid>
 </Window>

@@ -68,6 +68,8 @@
     <Compile Include="DebtorWindow.xaml.cs">
       <DependentUpon>DebtorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Debit.cs" />
+    <Compile Include="ViewModel\DebtorWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="DebtorWindow.xaml">
       <SubType>Designer</SubType>
