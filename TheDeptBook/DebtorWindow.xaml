@@ -7,9 +7,6 @@
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
         mc:Ignorable="d"
         Title="DebtorWindow" Height="450" Width="400">
-    <Window.DataContext>
-        <viewModel:DebtorWindowViewModel/>
-    </Window.DataContext>
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

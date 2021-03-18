@@ -21,6 +21,7 @@ namespace TheDeptBook.Model
             id = dId;
             name = dName;
             debtValue = dValue;
+            Debits = new ObservableCollection<Debit>();
         }
 
         public string ID

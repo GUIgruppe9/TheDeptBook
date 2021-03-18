@@ -24,6 +24,7 @@ namespace TheDeptBook.ViewModel
                 new Debtor("2", "Mikkel", 500),
                 new Debtor("3", "Anders", 44)
             };
+            debtors.First().Debits.Add(new Debit("1", 500));
         }
 
         // Properties
@@ -77,7 +78,12 @@ namespace TheDeptBook.ViewModel
             {
                 return _debtorClickedCommand ?? (_debtorClickedCommand = new DelegateCommand(() =>
                 {
-                    DebtorWindow debtorWindow = new DebtorWindow();
+                    var vm = new DebtorWindowViewModel(CurrentDebtor);
+                    var debtorWindow = new DebtorWindow()
+                    {
+                        DataContext = vm,
+                        Owner = App.Current.MainWindow
+                    };
                     debtorWindow.Show();
                 }));
             }

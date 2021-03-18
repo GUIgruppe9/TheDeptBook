@@ -18,15 +18,15 @@ namespace TheDeptBook.ViewModel
             debits = CurrentDebtor.Debits;
         }
 
-        public DebtorWindowViewModel()
-        {
-            Debits = new ObservableCollection<Debit>
-            {
-                new Debit("1", 500)
-            };
-            //CurrentDebtor = Application.Current.MainWindow
+        //public DebtorWindowViewModel()
+        //{
+        //    Debits = new ObservableCollection<Debit>
+        //    {
+        //        new Debit("1", 500)
+        //    };
+        //    //CurrentDebtor = Application.Current.MainWindow
 
-        }
+        //}
 
         Debtor currentDebtor;
         public Debtor CurrentDebtor
