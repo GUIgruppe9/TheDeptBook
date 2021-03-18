@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDeptBook"
+        xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
         mc:Ignorable="d"
         Title="DebtorWindow" Height="450" Width="400">
+    <Window.DataContext>
+        <viewModel:DebtorWindowViewModel/>
+    </Window.DataContext>
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -14,7 +18,11 @@
         <Label Content="Debits" HorizontalAlignment="Left" 
                Margin="33,33,0,0" VerticalAlignment="Top"/>
 
-        <DataGrid HorizontalAlignment="Left" 
+        <DataGrid ItemsSource="{Binding Path=Debits}"
+                  SelectedItem="{Binding Path=CurrentDebit}"
+                  SelectedIndex="{Binding Path=CurrentIndex}"
+                  ItemTemplate="{StaticResource lbxTemplate}"
+                  HorizontalAlignment="Left" 
                   MinHeight="100" 
                   Margin="33,59,0,0" 
                   VerticalAlignment="Top" 
