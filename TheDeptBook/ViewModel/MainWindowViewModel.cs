@@ -25,6 +25,7 @@ namespace TheDeptBook.ViewModel
                 new Debtor("3", "Anders", 44)
             };
             debtors.First().Debits.Add(new Debit("0", 500));
+            debtors.First().UpdateBalance();
         }
 
         // Properties

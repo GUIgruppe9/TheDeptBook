@@ -93,6 +93,7 @@ namespace TheDeptBook.ViewModel
                     
                     Debits.Add(new Debit(newId.ToString(), TbxNewDebit_Content));
                     currentIndex = Debits.Count - 1;
+                    CurrentDebtor.UpdateBalance();
                 }));
             }
         }
