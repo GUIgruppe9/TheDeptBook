@@ -28,7 +28,8 @@
                   MinHeight="100" 
                   Margin="33,59,0,0" 
                   VerticalAlignment="Top" 
-                  MaxWidth="150" MinWidth="100">
+                  MaxWidth="150" MinWidth="100"
+                  IsReadOnly="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>

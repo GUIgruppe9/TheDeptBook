@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using Prism.Commands;
 using Prism.Mvvm;
 using TheDeptBook.Model;
 
@@ -27,6 +30,8 @@ namespace TheDeptBook.ViewModel
         //    //CurrentDebtor = Application.Current.MainWindow
 
         //}
+
+        #region Properties
 
         Debtor currentDebtor;
         public Debtor CurrentDebtor
@@ -55,6 +60,62 @@ namespace TheDeptBook.ViewModel
             get { return currentIndex; }
             set { SetProperty(ref currentIndex, value); }
         }
+
+        private double tbxNewDebit_Content;
+
+        public double TbxNewDebit_Content
+        {
+            get { return tbxNewDebit_Content; }
+            set { SetProperty(ref tbxNewDebit_Content, value); }
+        }
+       
+        #endregion
+
+        #region Commands
+
+        ICommand _addDebitCommand;
+
+        public ICommand AddDebit
+        {
+            get
+            {
+                return _addDebitCommand ?? (_addDebitCommand = new DelegateCommand(() =>
+                {
+                    int newId;
+                    if (Debits.Any())
+                    {
+                        newId = Int32.Parse(Debits.Last().ID) + 1;
+                    }
+                    else
+                    {
+                        newId = 0;
+                    }
+                    
+                    Debits.Add(new Debit(newId.ToString(), TbxNewDebit_Content));
+                    currentIndex = Debits.Count - 1;
+                }));
+            }
+        }
+       
+        //DelegateCommand<object> _tbxNewDebitFocus;
+        //public ICommand TbxNewDebitFocus
+        //{
+        //    get
+        //    {
+        //        return _tbxNewDebitFocus ?? (_tbxNewDebitFocus = new DelegateCommand<object>(tbxFocus));
+        //    }
+        //}
+
+        //private void tbxFocus(object sender)
+        //{
+        //    TextBox tbx = sender as TextBox;
+        //    tbx.Text = String.Empty;
+        //}
+
+        #endregion
+
+
+
 
     }
 }
