@@ -18,6 +18,7 @@
                Margin="33,33,0,0" VerticalAlignment="Top"/>
 
         <DataGrid ItemsSource="{Binding Path=Debits}"
+                  AutoGenerateColumns="False"
                   SelectedItem="{Binding Path=CurrentDebit}"
                   SelectedIndex="{Binding Path=CurrentIndex}"
                   ItemTemplate="{StaticResource lbxTemplate}"
@@ -27,7 +28,10 @@
                   VerticalAlignment="Top" 
                   MaxWidth="150" MinWidth="100"
                   IsReadOnly="True">
-
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding DateTime}"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding DebitValue}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
         <TextBox Grid.Column="1"

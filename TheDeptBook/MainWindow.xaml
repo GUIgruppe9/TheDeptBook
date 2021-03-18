@@ -14,34 +14,39 @@
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Debtors" HorizontalAlignment="Left" 
-               Margin="33,33,0,0" VerticalAlignment="Top"/>
+               Margin="33,25,0,0" VerticalAlignment="Top"/>
 
         <DataGrid ItemsSource="{Binding Path=Debtors}"
+                  AutoGenerateColumns="False"
                   SelectedItem="{Binding Path=CurrentDebtor}" 
                   SelectedIndex="{Binding Path=CurrentIndex}"
                   ItemTemplate="{StaticResource lbxTemplate}"
                   HorizontalAlignment="Left" 
                   MinHeight="100" 
-                  Margin="33,59,0,0" 
+                  Margin="10,50,10,0" 
                   VerticalAlignment="Top" 
-                  MaxWidth="150" MinWidth="100"
+                  Width="200" MinWidth="100"
                   IsReadOnly="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DebtorNo." Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Balance" Binding="{Binding Value}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
         <Button Content="Add" ToolTip="Add Debtor"
                 Command="{Binding Path=AddDebtor}"
-                Grid.Column="1" HorizontalAlignment="Left" 
-                Margin="63.333,59,0,0" VerticalAlignment="Top" 
+                Grid.Column="1" HorizontalAlignment="Center" 
+                Margin="0,50,0,0" VerticalAlignment="Top" 
                 Width="75"/>
 
     </Grid>
