@@ -28,7 +28,7 @@ namespace TheDeptBook.ViewModel
             debtors.First().UpdateBalance();
         }
 
-        // Properties
+        /// Properties
         public ObservableCollection<Debtor> Debtors
         {
             get { return debtors; }
