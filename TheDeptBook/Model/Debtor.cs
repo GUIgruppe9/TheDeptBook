@@ -4,6 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Mvvm;
+using TheDeptBook.ViewModel;
+
 
 namespace TheDeptBook.Model
 {
@@ -20,8 +23,10 @@ namespace TheDeptBook.Model
         {
             id = dId;
             name = dName;
-            debtValue = dValue;
+            //debtValue = dValue;
             Debits = new ObservableCollection<Debit>();
+            Debits.Add(new Debit(0.ToString(), dValue));
+            UpdateBalance();
         }
 
         public string ID
@@ -57,6 +62,15 @@ namespace TheDeptBook.Model
             set
             {
                 debtValue = value;
+            }
+        }
+
+        public void UpdateBalance()
+        {
+            Value = 0;
+            foreach (var debit in Debits)
+            {
+                Value += debit.DebitValue;
             }
         }
     }

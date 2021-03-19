@@ -24,10 +24,11 @@ namespace TheDeptBook.ViewModel
                 new Debtor("2", "Mikkel", 500),
                 new Debtor("3", "Anders", 44)
             };
-            debtors.First().Debits.Add(new Debit("1", 500));
+            debtors.First().Debits.Add(new Debit("0", 500));
+            debtors.First().UpdateBalance();
         }
 
-        // Properties
+        /// Properties
         public ObservableCollection<Debtor> Debtors
         {
             get { return debtors; }

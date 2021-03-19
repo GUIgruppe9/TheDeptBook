@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:prism="http://prismlibrary.com/"
         xmlns:local="clr-namespace:TheDeptBook"
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
         mc:Ignorable="d"
@@ -16,6 +18,7 @@
                Margin="33,33,0,0" VerticalAlignment="Top"/>
 
         <DataGrid ItemsSource="{Binding Path=Debits}"
+                  AutoGenerateColumns="False"
                   SelectedItem="{Binding Path=CurrentDebit}"
                   SelectedIndex="{Binding Path=CurrentIndex}"
                   ItemTemplate="{StaticResource lbxTemplate}"
@@ -23,14 +26,31 @@
                   MinHeight="100" 
                   Margin="33,59,0,0" 
                   VerticalAlignment="Top" 
-                  MaxWidth="300" MinWidth="100"
+                  MaxWidth="150" MinWidth="100"
                   IsReadOnly="True">
-
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding DateTime}"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding DebitValue}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Add" ToolTip="Add Debtor"
+        <TextBox Grid.Column="1"
+                 Name="tbxNewDebit"
+                 VerticalAlignment="Top"
+                 Margin="40, 10, 40, 0"
+                 Text="{Binding Path=TbxNewDebit_Content}">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="GotFocus">
+                    <prism:InvokeCommandAction Command="{Binding Path=TbxNewDebitFocus}"
+                                               CommandParameter="{Binding ElementName=root, Path=(FocusManager.FocusedElement)}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+        </TextBox>
+
+        <Button Content="Add" ToolTip="Add Debit"
+                Command="{Binding Path=AddDebit}"
                 Grid.Column="1" HorizontalAlignment="Left" 
-                Margin="49.333,59,0,0" VerticalAlignment="Top" 
-                Width="75"/>
+                Margin="40,40,40,0" VerticalAlignment="Top" 
+                MinWidth="60"/>
     </Grid>
 </Window>

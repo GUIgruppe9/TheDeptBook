@@ -10,6 +10,7 @@ namespace TheDeptBook.Model
     {
         private string id;
         private DateTime dateTime;
+        private DateTime date;
         private double debitValue;
 
         public Debit() { }
