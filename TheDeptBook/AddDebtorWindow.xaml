@@ -1,0 +1,44 @@
+﻿<Window x:Class="TheDeptBook.AddDebtorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheDeptBook"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:prism="http://prismlibrary.com/"
+        mc:Ignorable="d"
+        Title="{Binding Path=Title}" Height="300" Width="230">
+    <Grid Background="PaleGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="23" 
+                 TextWrapping="Wrap" Text="{Binding Path=Deptors}" VerticalAlignment="Center" Width="120"/>
+
+        <TextBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="23"  
+                 TextWrapping="Wrap" Text="{Binding Path=Value}" VerticalAlignment="Center" Width="120"/>
+
+        <Button Grid.Column="0" Grid.Row="2" Content="Save" HorizontalAlignment="Center"  
+                VerticalAlignment="Center" Width="75"
+                Click="Save_OnClk"
+                Command="{Binding Path=SaveBtnCommand}"/>
+
+        <Button Grid.Column="1" Grid.Row="2" Content="Cancel" HorizontalAlignment="Center"  
+                VerticalAlignment="Center" Width="75"/>
+
+        <Label Content="Name:" HorizontalAlignment="Left" 
+               Margin="5,34,0,0" VerticalAlignment="Top" Height="23" Width="47"/>
+
+        <Label Content="Value:" HorizontalAlignment="Left" 
+               Margin="10,33.333,0,0" Grid.Row="1" VerticalAlignment="Top" Height="23" Width="42"/>
+
+
+    </Grid>
+</Window>

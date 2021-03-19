@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:TheDeptBook"
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
         mc:Ignorable="d"
-        Title="DebtorWindow" Height="450" Width="400">
+        Title="DebtorWindow" Height="300" Width="500">
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Debits" HorizontalAlignment="Left" 
                Margin="33,33,0,0" VerticalAlignment="Top"/>
@@ -23,13 +23,14 @@
                   MinHeight="100" 
                   Margin="33,59,0,0" 
                   VerticalAlignment="Top" 
-                  MaxWidth="150" MinWidth="100">
+                  MaxWidth="300" MinWidth="100"
+                  IsReadOnly="True">
 
         </DataGrid>
 
         <Button Content="Add" ToolTip="Add Debtor"
                 Grid.Column="1" HorizontalAlignment="Left" 
-                Margin="63.333,59,0,0" VerticalAlignment="Top" 
+                Margin="49.333,59,0,0" VerticalAlignment="Top" 
                 Width="75"/>
     </Grid>
 </Window>

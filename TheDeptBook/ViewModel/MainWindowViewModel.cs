@@ -64,9 +64,26 @@ namespace TheDeptBook.ViewModel
             {
                 return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
                 {
-                    Debtors.Add(new Debtor());
-                    CurrentIndex = Debtors.Count - 1;
-                }));
+                    var newDebtor = new Debtor();
+                    var addvm = new AddDebtorWindowViewModel("Add new debtor", newDebtor);
+                    var adddeptor = new AddDebtorWindow()
+                    {
+                        DataContext = addvm,
+                        Owner = App.Current.MainWindow
+                    };
+                    adddeptor.Show();
+
+                    if (adddeptor.ShowDialog() == true)
+                    {
+                        Debtors.Add(newDebtor);
+                        
+                    }
+                })); 
+                //return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
+                //{
+                //    Debtors.Add(new Debtor());
+                //    CurrentIndex = Debtors.Count - 1;
+                //}));
             }
         }
 

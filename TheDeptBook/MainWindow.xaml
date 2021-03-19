@@ -8,11 +8,11 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
-        Title="The Debt Book" Height="450" Width="400">
+        Title="The Debt Book" Height="300" Width="400">
     <Window.DataContext>
         <viewModel:MainWindowViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Background="Lavender">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -28,7 +28,8 @@
                   MinHeight="100" 
                   Margin="33,59,0,0" 
                   VerticalAlignment="Top" 
-                  MaxWidth="150" MinWidth="100">
+                  MaxWidth="150" MinWidth="100"
+                  IsReadOnly="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>
@@ -39,6 +40,7 @@
 
         <Button Content="Add" ToolTip="Add Debtor"
                 Command="{Binding Path=AddDebtor}"
+
                 Grid.Column="1" HorizontalAlignment="Left" 
                 Margin="63.333,59,0,0" VerticalAlignment="Top" 
                 Width="75"/>
