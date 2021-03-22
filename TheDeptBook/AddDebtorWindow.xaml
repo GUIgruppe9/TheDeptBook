@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
-        Title="{Binding Path=Title}" Height="300" Width="230">
+        Title="Add Deptor" Height="300" Width="230">
     <Grid Background="DarkGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -26,9 +26,21 @@
                  Height="23" 
                  TextWrapping="Wrap" 
                  TabIndex="1"
-                 Text="{Binding Path=newDeptor.Name}" 
+
+                 Text="{Binding Path=newDebtor.ID}"
                  VerticalAlignment="Center" 
                  Width="120"/>
+
+        <TextBox Grid.Column="0"
+                 Grid.Row="0"
+                 Grid.RowSpan="2"
+                 Grid.ColumnSpan="2"
+                 Height="23"
+                 HorizontalAlignment="Center"
+                 Width="120"
+                 TabIndex="2"
+                 VerticalAlignment="Center"
+                 Text="{Binding Path=newDebtor.Name}"/>
 
         <TextBox Grid.Column="0" 
                  Grid.Row="1" 
@@ -36,7 +48,7 @@
                  HorizontalAlignment="Center" 
                  Height="23"  
                  TextWrapping="Wrap" 
-                 TabIndex="2"
+                 TabIndex="3"
                  Text="{Binding Path=newDebtor.Value}" 
                  VerticalAlignment="Center" 
                  Width="120"/>
@@ -47,11 +59,11 @@
                 VerticalAlignment="Center" 
                 Width="75"
                 IsDefault="True"
-                TabIndex="3"
+                TabIndex="4"
                 Name="BtnAdd"
                 Content="Add" 
                 Click="Add_OnClk"
-                Command="{Binding Path=AddBtnCommand}"
+                Command="{Binding Path=AddBtnCommand, Mode=OneTime}"
                 Background="LawnGreen"/>
 
         <Button Grid.Column="1" 
@@ -61,23 +73,32 @@
                 VerticalAlignment="Center" 
                 Width="75"
                 IsCancel="True"
-                TabIndex="4"
+                TabIndex="5"
                 Background="red"/>
 
-        <Label Content="Name:" 
+        <Label Content="ID:" 
                HorizontalAlignment="Left" 
-               Margin="5,34,0,0" 
+               Margin="0,34,0,0" 
                VerticalAlignment="Top" 
                Height="23" 
-               Width="47"/>
+               Width="24"
+               Padding="3"/>
+
+        <Label Content="Name:"
+               Width="44"
+               Height="25"
+               Grid.RowSpan="2"
+               HorizontalAlignment="Left" Margin="0,79"
+               Padding="3"/>
 
         <Label Content="Value:" 
                HorizontalAlignment="Left" 
-               Margin="10,33.333,0,0" 
+               Margin="0,34.667,0,0" 
                Grid.Row="1" 
                VerticalAlignment="Top" 
                Height="23" 
-               Width="42"/>
+               Width="42"
+               Padding="3"/>
 
 
     </Grid>

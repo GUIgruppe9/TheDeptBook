@@ -13,6 +13,7 @@ namespace TheDeptBook.ViewModel
 {
     class AddDebtorWindowViewModel : BindableBase
     {
+
         public AddDebtorWindowViewModel( Debtor debtor)
         {
             newDebtor = debtor;
@@ -33,9 +34,18 @@ namespace TheDeptBook.ViewModel
         {
             get
             {
-                bool isValid = !string.IsNullOrWhiteSpace(newDebtor.Name);
-                if (double.IsNaN(newDebtor.Value))
+                bool isValid = true;
+
+                if (string.IsNullOrWhiteSpace(newDebtor.Name))
+                {
                     isValid = false;
+                }
+
+                if (double.IsNaN(newDebtor.Value))
+                {
+                    isValid = false;
+                }
+
                 return isValid;
             }
         }

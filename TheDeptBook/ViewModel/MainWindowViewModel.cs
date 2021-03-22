@@ -72,6 +72,7 @@ namespace TheDeptBook.ViewModel
                         DataContext = addDeptorViewModel
                         //Owner = App.Current.MainWindow
                     };
+                    
                     //addDebtor.Show();
 
                     if (addDebtor.ShowDialog() == true)
