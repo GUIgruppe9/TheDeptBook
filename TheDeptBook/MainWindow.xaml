@@ -30,7 +30,7 @@
                   Margin="10,50,10,0" 
                   VerticalAlignment="Top" 
                   Width="200" MinWidth="100"
-                  IsReadOnly="True">
+                  IsReadOnly="True" SelectionChanged="DataGrid_SelectionChanged">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>
@@ -38,7 +38,7 @@
             </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="DebtorNo." Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="75"/>
                 <DataGridTextColumn Header="Balance" Binding="{Binding Value}"/>
             </DataGrid.Columns>
         </DataGrid>
