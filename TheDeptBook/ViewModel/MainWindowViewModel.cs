@@ -70,22 +70,14 @@ namespace TheDeptBook.ViewModel
                     var addDebtor = new AddDebtorWindow
                     {
                         DataContext = addDeptorViewModel
-                        //Owner = App.Current.MainWindow
                     };
-                    
-                    //addDebtor.Show();
 
                     if (addDebtor.ShowDialog() == true)
                     {
                         Debtors.Add(newDebtor);
                         currentDebtor = newDebtor;
                     }
-                })); 
-                //return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
-                //{
-                //    Debtors.Add(new Debtor());
-                //    CurrentIndex = Debtors.Count - 1;
-                //}));
+                }));
             }
         }
 

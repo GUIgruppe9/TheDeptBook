@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:TheDeptBook"
         xmlns:viewModel="clr-namespace:TheDeptBook.ViewModel"
         mc:Ignorable="d"
-        Title="DebtorWindow" Height="300" Width="500">
+        Title="DebtorWindow" Height="300" Width="400">
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -37,27 +37,24 @@
         <TextBox Grid.Column="1"
                  Name="tbxNewDebit"
                  VerticalAlignment="Top"
-                 Margin="40, 10, 40, 0"
-                 Text="{Binding Path=TbxNewDebit_Content}">
-            <!--<i:Interaction.Triggers>
-                <i:EventTrigger EventName="GotFocus">
-                    <prism:InvokeCommandAction Command="{Binding Path=TbxNewDebitFocus}"
-                                               CommandParameter="{Binding ElementName=root, Path=(FocusManager.FocusedElement)}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>-->
-        </TextBox>
+                 Margin="29,20,50.333,0"
+                 Text="{Binding Path=TbxNewDebit_Content}"/>
 
         <Button Content="Add" ToolTip="Add Debit"
                 Command="{Binding Path=AddDebit}"
-                Grid.Column="1" HorizontalAlignment="Left" 
-                Margin="40,40,40,0" VerticalAlignment="Top" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="29,50,0,0" 
+                VerticalAlignment="Top" 
                 MinWidth="60"/>
-        <Button Content="Remove" ToolTip="Remove Debit"
-                Command="{Binding Path=RemoveDebit}"
-                Grid.Column="1" HorizontalAlignment="Left"
-                Margin="40, 70, 40, 0" VerticalAlignment="Top"
-                MinWidth="60">
 
-        </Button>
+        <Button Content="Remove" 
+                ToolTip="Remove Debit"
+                Command="{Binding Path=RemoveDebit}"
+                Grid.Column="1" 
+                HorizontalAlignment="Left"
+                Margin="29,80,0,0" 
+                VerticalAlignment="Top"
+                MinWidth="60"/>
     </Grid>
 </Window>

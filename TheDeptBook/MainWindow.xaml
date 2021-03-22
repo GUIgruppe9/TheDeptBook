@@ -26,11 +26,14 @@
                   SelectedIndex="{Binding Path=CurrentIndex}"
                   ItemTemplate="{StaticResource lbxTemplate}"
                   HorizontalAlignment="Left" 
-                  MaxHeight="300" MinHeight="100" 
+                  MaxHeight="300" 
+                  MinHeight="100" 
                   Margin="10,50,10,0" 
                   VerticalAlignment="Top" 
-                  Width="200" MinWidth="100"
-                  IsReadOnly="True" SelectionChanged="DataGrid_SelectionChanged">
+                  Width="200" 
+                  MinWidth="100"
+                  IsReadOnly="True" 
+                  SelectionChanged="DataGrid_SelectionChanged">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <prism:InvokeCommandAction Command="{Binding DebtorClicked}"/>
@@ -43,11 +46,13 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Add" ToolTip="Add Debtor"
+        <Button Content="Add" 
+                ToolTip="Add Debtor"
                 Command="{Binding Path=AddDebtorCommand}"
-                Grid.Column="1" HorizontalAlignment="Center" 
-                Margin="0,50,0,0" VerticalAlignment="Top" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                Margin="0,50,0,0" 
+                VerticalAlignment="Top" 
                 Width="75"/>
-
     </Grid>
 </Window>

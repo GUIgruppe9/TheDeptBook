@@ -4,11 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheDeptBook"
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-        xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="Add Deptor" Height="300" Width="230">
-    <Grid Background="DarkGray">
+    <Grid Background="LightBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -26,7 +24,6 @@
                  Height="23" 
                  TextWrapping="Wrap" 
                  TabIndex="1"
-
                  Text="{Binding Path=newDebtor.ID}"
                  VerticalAlignment="Center" 
                  Width="120"/>
@@ -99,7 +96,5 @@
                Height="23" 
                Width="42"
                Padding="3"/>
-
-
     </Grid>
 </Window>

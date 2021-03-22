@@ -20,17 +20,7 @@ namespace TheDeptBook.ViewModel
             CurrentDebtor = debtor;
             debits = CurrentDebtor.Debits;
         }
-
-        //public DebtorWindowViewModel()
-        //{
-        //    Debits = new ObservableCollection<Debit>
-        //    {
-        //        new Debit("1", 500)
-        //    };
-        //    //CurrentDebtor = Application.Current.MainWindow
-
-        //}
-
+        
         #region Properties
 
         Debtor currentDebtor;
@@ -110,26 +100,6 @@ namespace TheDeptBook.ViewModel
                 }));
             }
         }
-
-        //DelegateCommand<object> _tbxNewDebitFocus;
-        //public ICommand TbxNewDebitFocus
-        //{
-        //    get
-        //    {
-        //        return _tbxNewDebitFocus ?? (_tbxNewDebitFocus = new DelegateCommand<object>(tbxFocus));
-        //    }
-        //}
-
-        //private void tbxFocus(object sender)
-        //{
-        //    TextBox tbx = sender as TextBox;
-        //    tbx.Text = String.Empty;
-        //}
-
         #endregion
-
-
-
-
     }
 }

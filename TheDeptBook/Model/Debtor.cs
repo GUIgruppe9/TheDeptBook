@@ -24,7 +24,6 @@ namespace TheDeptBook.Model
         {
             id = dId;
             name = dName;
-            //debtValue = dValue;
             Debits = new ObservableCollection<Debit>();
             Debits.Add(new Debit(0.ToString(), dValue));
             UpdateBalance();

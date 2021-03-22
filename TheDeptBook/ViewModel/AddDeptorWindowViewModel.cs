@@ -21,7 +21,6 @@ namespace TheDeptBook.ViewModel
 
         #region Properties
 
-       
         Debtor newdebtor;
 
         public Debtor newDebtor
@@ -68,7 +67,6 @@ namespace TheDeptBook.ViewModel
 
         private void SaveBtnCommand_Execute()
         {
-            // Intet behøves herinde
         }
 
         private bool SaveBtnCommand_CanExecute()
