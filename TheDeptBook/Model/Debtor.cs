@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Prism.Mvvm;
+using Prism.Commands;
 using TheDeptBook.ViewModel;
 
 
 namespace TheDeptBook.Model
 {
-    public class Debtor
+    public class Debtor : BindableBase
     {
         private string id;
         private string name;
@@ -49,7 +50,7 @@ namespace TheDeptBook.Model
             }
             set
             {
-                name = value;
+                SetProperty(ref name, value);
             }
         }
 
@@ -61,7 +62,7 @@ namespace TheDeptBook.Model
             }
             set
             {
-                debtValue = value;
+                SetProperty(ref debtValue, value);
             }
         }
 

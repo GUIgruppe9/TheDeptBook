@@ -37,12 +37,22 @@ namespace TheDeptBook.ViewModel
             set { SetProperty(ref newdebtor, value); }
         }
 
+        public bool IsValid
+        {
+            get
+            {
+                bool isValid = !string.IsNullOrWhiteSpace(newDebtor.Name);
+                if (double.IsNaN(newDebtor.Value))
+                    isValid = false;
+                return isValid;
+            }
+        }
+
         #endregion
 
         #region Commands
 
         ICommand _saveBtnCommand;
-
         public ICommand SaveBtnCommand
         {
             get
@@ -62,18 +72,6 @@ namespace TheDeptBook.ViewModel
         private bool SaveBtnCommand_CanExecute()
         {
             return IsValid;
-        }
-
-        public bool IsValid
-        {
-            get
-            {
-                bool isValid = !string.IsNullOrWhiteSpace(newDebtor.Name);
-                if (double.IsNaN(newDebtor.Value))
-                    isValid = false;
-                return isValid;
-
-            }
         }
 
         #endregion

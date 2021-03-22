@@ -19,25 +19,57 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="23" 
-                 TextWrapping="Wrap" Text="{Binding Path=Deptors}" VerticalAlignment="Center" Width="120"/>
+        <TextBox Grid.Column="0" 
+                 Grid.Row="0" 
+                 Grid.ColumnSpan="2" 
+                 HorizontalAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 Text="{Binding Path=Deptors}" 
+                 VerticalAlignment="Center" 
+                 Width="120"/>
 
-        <TextBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="23"  
-                 TextWrapping="Wrap" Text="{Binding Path=Value}" VerticalAlignment="Center" Width="120"/>
+        <TextBox Grid.Column="0" 
+                 Grid.Row="1" 
+                 Grid.ColumnSpan="2" 
+                 HorizontalAlignment="Center" 
+                 Height="23"  
+                 TextWrapping="Wrap" 
+                 Text="{Binding Path=Value}" 
+                 VerticalAlignment="Center" 
+                 Width="120"/>
 
-        <Button Grid.Column="0" Grid.Row="2" Content="Save" HorizontalAlignment="Center"  
-                VerticalAlignment="Center" Width="75"
+        <Button Grid.Column="0" 
+                Grid.Row="2" 
+                HorizontalAlignment="Center"  
+                VerticalAlignment="Center" 
+                Width="75"
+                Name="BtnSave"
+                Content="Save" 
                 Click="Save_OnClk"
                 Command="{Binding Path=SaveBtnCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="2" Content="Cancel" HorizontalAlignment="Center"  
-                VerticalAlignment="Center" Width="75"/>
+        <Button Grid.Column="1" 
+                Grid.Row="2" 
+                Content="Cancel" 
+                HorizontalAlignment="Center"  
+                VerticalAlignment="Center" 
+                Width="75"/>
 
-        <Label Content="Name:" HorizontalAlignment="Left" 
-               Margin="5,34,0,0" VerticalAlignment="Top" Height="23" Width="47"/>
+        <Label Content="Name:" 
+               HorizontalAlignment="Left" 
+               Margin="5,34,0,0" 
+               VerticalAlignment="Top" 
+               Height="23" 
+               Width="47"/>
 
-        <Label Content="Value:" HorizontalAlignment="Left" 
-               Margin="10,33.333,0,0" Grid.Row="1" VerticalAlignment="Top" Height="23" Width="42"/>
+        <Label Content="Value:" 
+               HorizontalAlignment="Left" 
+               Margin="10,33.333,0,0" 
+               Grid.Row="1" 
+               VerticalAlignment="Top" 
+               Height="23" 
+               Width="42"/>
 
 
     </Grid>
