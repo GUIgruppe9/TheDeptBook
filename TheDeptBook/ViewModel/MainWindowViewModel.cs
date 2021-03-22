@@ -66,18 +66,18 @@ namespace TheDeptBook.ViewModel
                 return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
                 {
                     var newDebtor = new Debtor();
-                    var addvm = new AddDebtorWindowViewModel("Add new debtor", newDebtor);
-                    var adddeptor = new AddDebtorWindow()
+                    var addDeptorViewModel = new AddDebtorWindowViewModel("Add new debtor", newDebtor);
+                    var addDebtor = new AddDebtorWindow()
                     {
-                        DataContext = addvm,
-                        Owner = App.Current.MainWindow
+                        DataContext = addDeptorViewModel,
+                        //Owner = App.Current.MainWindow
                     };
-                    adddeptor.Show();
+                    //addDebtor.Show();
 
-                    if (adddeptor.ShowDialog() == true)
+                    if (addDebtor.ShowDialog() == true)
                     {
                         Debtors.Add(newDebtor);
-                        
+                        currentDebtor = newDebtor;
                     }
                 })); 
                 //return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
