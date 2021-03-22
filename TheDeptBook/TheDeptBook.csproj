@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Model\Debit.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\AddDeptorWindowViewModel.cs" />
     <Compile Include="ViewModel\DebtorWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="AddDebtorWindow.xaml">
