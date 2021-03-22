@@ -74,7 +74,6 @@ namespace TheDeptBook.ViewModel
         #region Commands
 
         ICommand _addDebitCommand;
-
         public ICommand AddDebit
         {
             get
@@ -97,7 +96,21 @@ namespace TheDeptBook.ViewModel
                 }));
             }
         }
-       
+
+        ICommand _removeDebitCommand;
+
+        public ICommand RemoveDebit
+        {
+            get
+            {
+                return _removeDebitCommand ?? (_removeDebitCommand = new DelegateCommand(() =>
+                {
+                    Debits.Remove(CurrentDebit);
+                    currentIndex = Debits.Count - 1;
+                }));
+            }
+        }
+
         //DelegateCommand<object> _tbxNewDebitFocus;
         //public ICommand TbxNewDebitFocus
         //{
