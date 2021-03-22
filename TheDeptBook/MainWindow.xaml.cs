@@ -28,6 +28,11 @@ namespace TheDeptBook
             InitializeComponent();
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
 
         //private void Debtor_clicked(object sender, RoutedEventArgs e)
         //{
