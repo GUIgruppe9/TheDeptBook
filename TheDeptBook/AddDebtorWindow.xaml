@@ -8,7 +8,7 @@
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="{Binding Path=Title}" Height="300" Width="230">
-    <Grid Background="PaleGreen">
+    <Grid Background="DarkGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -25,7 +25,8 @@
                  HorizontalAlignment="Center" 
                  Height="23" 
                  TextWrapping="Wrap" 
-                 Text="{Binding Path=Deptors}" 
+                 TabIndex="1"
+                 Text="{Binding Path=newDeptor.Name}" 
                  VerticalAlignment="Center" 
                  Width="120"/>
 
@@ -35,7 +36,8 @@
                  HorizontalAlignment="Center" 
                  Height="23"  
                  TextWrapping="Wrap" 
-                 Text="{Binding Path=Value}" 
+                 TabIndex="2"
+                 Text="{Binding Path=newDebtor.Value}" 
                  VerticalAlignment="Center" 
                  Width="120"/>
 
@@ -44,17 +46,23 @@
                 HorizontalAlignment="Center"  
                 VerticalAlignment="Center" 
                 Width="75"
-                Name="BtnSave"
-                Content="Save" 
-                Click="Save_OnClk"
-                Command="{Binding Path=SaveBtnCommand}"/>
+                IsDefault="True"
+                TabIndex="3"
+                Name="BtnAdd"
+                Content="Add" 
+                Click="Add_OnClk"
+                Command="{Binding Path=AddBtnCommand}"
+                Background="LawnGreen"/>
 
         <Button Grid.Column="1" 
                 Grid.Row="2" 
                 Content="Cancel" 
                 HorizontalAlignment="Center"  
                 VerticalAlignment="Center" 
-                Width="75"/>
+                Width="75"
+                IsCancel="True"
+                TabIndex="4"
+                Background="red"/>
 
         <Label Content="Name:" 
                HorizontalAlignment="Left" 

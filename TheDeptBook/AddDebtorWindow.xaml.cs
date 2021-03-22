@@ -24,7 +24,7 @@ namespace TheDeptBook
             InitializeComponent();
         }
 
-        private void Save_OnClk(object sender, RoutedEventArgs e)
+        private void Add_OnClk(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }

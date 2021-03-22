@@ -13,22 +13,14 @@ namespace TheDeptBook.ViewModel
 {
     class AddDebtorWindowViewModel : BindableBase
     {
-        public AddDebtorWindowViewModel(string title, Debtor debtor)
+        public AddDebtorWindowViewModel( Debtor debtor)
         {
-            Title = title;
             newDebtor = debtor;
         }
 
         #region Properties
 
-        string title;
-
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
-
+       
         Debtor newdebtor;
 
         public Debtor newDebtor
@@ -52,12 +44,12 @@ namespace TheDeptBook.ViewModel
 
         #region Commands
 
-        ICommand _saveBtnCommand;
-        public ICommand SaveBtnCommand
+        ICommand _addBtnCommand;
+        public ICommand AddBtnCommand
         {
             get
             {
-                return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(
+                return _addBtnCommand ?? (_addBtnCommand = new DelegateCommand(
                         SaveBtnCommand_Execute, SaveBtnCommand_CanExecute)
                     .ObservesProperty(() => newDebtor.Name)
                     .ObservesProperty(() => newDebtor.Value));

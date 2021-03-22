@@ -44,7 +44,7 @@
         </DataGrid>
 
         <Button Content="Add" ToolTip="Add Debtor"
-                Command="{Binding Path=AddDebtor}"
+                Command="{Binding Path=AddDebtorCommand}"
                 Grid.Column="1" HorizontalAlignment="Center" 
                 Margin="0,50,0,0" VerticalAlignment="Top" 
                 Width="75"/>

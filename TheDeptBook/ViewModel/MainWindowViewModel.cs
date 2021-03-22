@@ -59,17 +59,17 @@ namespace TheDeptBook.ViewModel
         // Commands
         ICommand _addDebtorCommand;
 
-        public ICommand AddDebtor
+        public ICommand AddDebtorCommand
         {
             get
             {
                 return _addDebtorCommand ?? (_addDebtorCommand = new DelegateCommand(() =>
                 {
                     var newDebtor = new Debtor();
-                    var addDeptorViewModel = new AddDebtorWindowViewModel("Add new debtor", newDebtor);
-                    var addDebtor = new AddDebtorWindow()
+                    var addDeptorViewModel = new AddDebtorWindowViewModel(newDebtor);
+                    var addDebtor = new AddDebtorWindow
                     {
-                        DataContext = addDeptorViewModel,
+                        DataContext = addDeptorViewModel
                         //Owner = App.Current.MainWindow
                     };
                     //addDebtor.Show();
