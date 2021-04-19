@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="View\AddDebtorWindow.xaml.cs">
       <DependentUpon>AddDebtorWindow.xaml</DependentUpon>
     </Compile>

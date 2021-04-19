@@ -101,5 +101,6 @@ namespace TheDeptBook.ViewModel
                 }));
             }
         }
+
     }
 }
