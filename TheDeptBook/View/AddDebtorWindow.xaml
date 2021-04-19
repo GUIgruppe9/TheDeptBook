@@ -1,9 +1,9 @@
-﻿<Window x:Class="TheDeptBook.AddDebtorWindow"
+﻿<Window x:Class="TheDeptBook.View.AddDebtorWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TheDeptBook"
+        xmlns:local="clr-namespace:TheDeptBook.View"
         mc:Ignorable="d"
         Title="Add Deptor" Height="300" Width="230">
     <Grid Background="LightBlue">

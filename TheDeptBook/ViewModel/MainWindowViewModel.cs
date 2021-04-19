@@ -9,6 +9,7 @@ using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
 using TheDeptBook.Model;
+using TheDeptBook.View;
 
 namespace TheDeptBook.ViewModel
 {
@@ -74,6 +75,7 @@ namespace TheDeptBook.ViewModel
 
                     if (addDebtor.ShowDialog() == true)
                     {
+                        newDebtor.Debits.Add(new Debit("0", newDebtor.Value));
                         Debtors.Add(newDebtor);
                         currentDebtor = newDebtor;
                     }

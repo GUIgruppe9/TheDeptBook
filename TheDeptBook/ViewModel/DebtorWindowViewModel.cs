@@ -97,6 +97,7 @@ namespace TheDeptBook.ViewModel
                 {
                     Debits.Remove(CurrentDebit);
                     currentIndex = Debits.Count - 1;
+                    CurrentDebtor.UpdateBalance();
                 }));
             }
         }

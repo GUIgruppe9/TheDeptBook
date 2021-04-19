@@ -54,6 +54,7 @@ namespace TheDeptBook.ViewModel
         #region Commands
 
         ICommand _addBtnCommand;
+
         public ICommand AddBtnCommand
         {
             get
