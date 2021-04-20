@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Mvvm;
 using TheDeptBook.Model;
 using TheDeptBook.View;
+using TheDeptBook.Data;
 
 namespace TheDeptBook.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
+        private string filename = "";
+        string filePath = "";
+
         private ObservableCollection<Debtor> debtors;
 
         public MainWindowViewModel()
@@ -102,5 +108,77 @@ namespace TheDeptBook.ViewModel
             }
         }
 
+        ICommand _saveDebtorCommand;
+        public ICommand saveDebtorCommand
+        {
+            get
+            {
+                return _saveDebtorCommand ?? (_saveDebtorCommand = new DelegateCommand(SaveFileCommand_Execute));
+            }
+        }
+        private void SaveFileCommand_Execute()
+        {
+            var dialog = new SaveFileDialog();
+
+            if (filePath == "")
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            else
+                dialog.InitialDirectory = Path.GetDirectoryName(filePath);
+
+            if (dialog.ShowDialog(App.Current.MainWindow) == true)
+            {
+                filePath = dialog.FileName;
+                filename = Path.GetFileName(filePath);
+                SaveFile();
+            }
+            
+        }
+
+
+        private void SaveFile()
+        {
+            try
+            {
+                Repository.SaveFile(filePath, debtors);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to save file", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        ICommand _loadDebtorCommand;
+        public ICommand loadDebtorCommand
+        {
+            get { return _loadDebtorCommand ?? (_loadDebtorCommand = new DelegateCommand(OpenFileCommand_Execute)); }
+        }
+
+
+        private void OpenFileCommand_Execute()
+        {
+            var dialog = new OpenFileDialog();
+
+            
+            if (filePath == "")
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            else
+                dialog.InitialDirectory = Path.GetDirectoryName(filePath);
+
+            if (dialog.ShowDialog(App.Current.MainWindow) == true)
+            {
+                filePath = dialog.FileName;
+                filename = Path.GetFileName(filePath);
+                try
+                {
+                    ObservableCollection<Debtor> tempDebtors;
+                    Repository.ReadFile(filePath, out tempDebtors);
+                    Debtors = tempDebtors;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unable to open file", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }

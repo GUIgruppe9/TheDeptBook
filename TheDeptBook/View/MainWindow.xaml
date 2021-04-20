@@ -45,14 +45,35 @@
                 <DataGridTextColumn Header="Balance" Binding="{Binding Value}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Column="1">
+            <Button Content="Add" 
+                    ToolTip="Add Debtor"
+                    Command="{Binding Path=AddDebtorCommand}"
+                    Grid.Column="1" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,50,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="75"/>
+            <Button Content="save" 
+                    ToolTip="save debtors"
+                    Command="{Binding Path=saveDebtorCommand}"
+                    Grid.Column="1" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,50,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="75"/>
+            <Button Content="load" 
+                    ToolTip="load last debtors"
+                    Command="{Binding Path=loadDebtorCommand}"
+                    Grid.Column="1" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,50,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="75"/>
 
-        <Button Content="Add" 
-                ToolTip="Add Debtor"
-                Command="{Binding Path=AddDebtorCommand}"
-                Grid.Column="1" 
-                HorizontalAlignment="Center" 
-                Margin="0,50,0,0" 
-                VerticalAlignment="Top" 
-                Width="75"/>
+
+        </StackPanel>
+
+        
     </Grid>
 </Window>
